@@ -1,0 +1,15 @@
+#wrapper{
+    max-width:900px;
+	/* center page in wide viewports */
+	margin:auto;
+
+    
+	/*  make flexbox container*/
+	display: flex;
+	flex-direction: column;
+
+	/*  min fill all vertical viewport space */
+	min-height:100vh;
+
+    background-color: lightgoldenrodyellow;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- author: Elaine Lai	-->
+
+<head>
+    <title>Move!</title>
+    <meta charset="utf-8" />
+    <link rel ="stylesheet" href ="css/index.css"/>
+</head>
+
+<body>
+    <div id= "wrapper">
+        <h1>Move!</h1>
+        <p>Aimed to help athletes strengthen their knees after ACL reconstruction.</p>
+
+        <!--Minutes Desired-->
+        <p>How long would you like to train today?</p>
+        <div>
+            <button class="time" id="45" onclick="timerInterval(this.id)">45 secs</button>
+            <button class="time" id="60" onclick="timerInterval(this.id)">1 mins</button>
+            <button class="time" id="120" onclick="timerInterval(this.id)">2 mins</button>
+        </div>
+        <br>
+
+        <button onclick="startAll()" id="start">START</button>
+
+        <div> <br></div>
+
+        <div id="timer">0</div>
+
+        <div>
+            <p>Go:</p>
+        </div>
+
+        <!--Randomly Generated-->
+        <div onload="randomDirection();" id="generateHere"></div>
+    </div>
+
+    <!--JAVASCRIPT STARTS HERE-->
+    <!--JAVASCRIPT STARTS HERE-->
+    <!--JAVASCRIPT STARTS HERE-->
+    <script>
+        //when start is clicked
+        function startAll() {
+            //makes sure that a duration is selected
+            if (flag == undefined){
+                console.log("hi")
+                alert("please pick a duration!")
+            } else{
+                startTimer();
+            }
+        }
+
+        //Random generator from Array
+        function randomDirection() {
+            var theArray = ['Right', 'Left', 'Up', 'Down', 'Right Top', 'Right Bottom', 'Left Top', 'Left Bottom']
+
+            const randomSelect = theArray[Math.floor(Math.random() * theArray.length)]
+
+            console.log(randomSelect, theArray[randomSelect])
+            document.getElementById("generateHere").innerHTML = randomSelect, theArray[randomSelect];
+            document.getElementById("generateHere").style.fontSize = "50px";
+            document.getElementById("generateHere").style.color = "pink";
+        }
+        // randomDirection();
+
+        //set timer duration by selecting the ID
+        var flag;
+        var seconds;
+        function timerInterval(clicked) {
+            flag = true;
+            var hello = document.getElementById("timer");
+            //sets the timer to the clicked button
+            seconds = hello.innerHTML = clicked;
+            hello.style.fontSize = "50px";
+            // console.log(seconds)
+            // console.log(flag); //makes sure that a duration is picked before starting timer
+        }
+
+        //start Timer
+        function startTimer() {
+            console.log(seconds);
+
+            var timeLeft = seconds; //user's selection
+
+            var timer = document.getElementById("timer");
+
+            var timerID = setInterval(countdown, 1000); //counts down by 1 sec each time
+
+            function countdown() {
+                if (timeLeft == -1) {
+                    clearTimeout(timerID);
+                    timer.innerHTML = "DONE!";
+                    timer.style.fontSize = "50px";
+                } else {
+                    timer.innerHTML = timeLeft;
+            
+                    if (timeLeft % 2 == 0) {
+                        randomDirection();
+                    }
+                    timeLeft--;
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
