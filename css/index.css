@@ -1,15 +1,123 @@
-#wrapper{
-    max-width:900px;
-	/* center page in wide viewports */
-	margin:auto;
+/*-------------------CELLPHONE/NARROWEST VIEW-------------------*/
+#wrapper {
+  max-width: 900px;
+  /* center page in wide viewports */
+  margin: auto;
 
-    
-	/*  make flexbox container*/
-	display: flex;
-	flex-direction: column;
+  /*  make flexbox container*/
+  display: flex;
+  flex-direction: column;
 
-	/*  min fill all vertical viewport space */
-	min-height:100vh;
+  /*  min fill all vertical viewport space */
+  min-height: 100vh;
 
-    background-color: lightgoldenrodyellow;
+  background-color: lightgoldenrodyellow;
+
+  text-align: center;
+
+  padding: 15px;
+  
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+button {
+	cursor: pointer;
+  }
+
+
+/*Instruction Button Style*/
+#showthis{
+	background-color: transparent;
+}
+
+#instructions{
+	font-style: italic;
+	border: 1px solid black;
+	border-radius: 8px;
+	padding: 8px;
+	font-size: 14px;
+}
+
+/*Timer Selection Buttons*/
+.time{
+	font-size: 20px;
+}
+
+.timeselection{
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	grid-template-rows: 100%;
+}
+
+
+.startstopbutton {
+  padding: 5px;
+  font-size: 25px;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+#slogan{
+	margin: 10px;
+}
+
+.intro{
+	padding-right: 35px;
+	padding-left: 35px;
+}
+
+#addborder{
+	border: 1px solid black;
+	border-radius: 8px;
+	padding: 5px;
+}
+
+#makeLarger{
+	font-size: 150px;
+}
+
+#timer{
+	font-size: 140px;
+}
+
+#duration{
+	padding-top: 30px;
+	border-top: 1px black dashed;
+	font-size: 23px;
+}
+
+#timerTitle{
+	font-size: 20px;
+}
+
+
+
+
+
+/*-------------------DESKTOP VIEW-------------------*/
+@media (min-width: 1080px) {
+  #wrapper {
+    max-width: 1500px;
+    /* center page in wide viewports */
+    margin: auto;
+
+    /*  make flexbox container*/
+    display: flex;
+    flex-direction: column;
+
+    /*  min fill all vertical viewport space */
+    min-height: 100vh;
+
+    /* background-color: lightgoldenrodyellow; */
+	background-color: rgb(132, 190, 132);
+    text-align: center;
+  }
+
+  /*slightly larger overall font*/
+  html {
+    font-size: 20px;
+  }
 }
